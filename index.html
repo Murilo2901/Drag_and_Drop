@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Interativa - Drag and Drop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🎨 Galeria Interativa com Drag and Drop</h1>
+
+    <div class="container">
+        <section id="galeria" class="dropzone">
+            <h2>Galeria Principal</h2>
+            <div class="imagens">
+                <img src="https://picsum.photos/id/1011/150" alt="Imagem 1" class="draggable" draggable="true">
+                <img src="https://picsum.photos/id/1012/150" alt="Imagem 2" class="draggable" draggable="true">
+                <img src="https://picsum.photos/id/1015/150" alt="Imagem 3" class="draggable" draggable="true">
+                <img src="https://picsum.photos/id/1016/150" alt="Imagem 4" class="draggable" draggable="true">
+            </div>
+        </section>
+
+        <section id="favoritos" class="dropzone">
+            <h2>Favoritos (<span id="contador">0</span>)</h2>
+            <div class="imagens"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
