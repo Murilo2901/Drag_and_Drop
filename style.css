@@ -1,0 +1,88 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #eaf4fc, #fce4ec);
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    background: #212121;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+header h1 {
+    margin-bottom: 5px;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 30px auto;
+    gap: 30px;
+    max-width: 1200px;
+}
+
+section {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    width: 45%;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+section:hover {
+    transform: translateY(-3px);
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #1565c0;
+}
+
+.times {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    border: 3px solid transparent;
+    background: #f5f5f5;
+    padding: 10px;
+    cursor: grab;
+    transition: 0.3s;
+}
+
+img:hover {
+    transform: scale(1.08);
+}
+
+.zona-drop.dragover {
+    border: 3px dashed #1565c0;
+    background-color: #e3f2fd;
+}
+
+#favoritos img {
+    border: 3px solid gold;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    background: #212121;
+    color: white;
+    padding: 10px;
+    font-size: 0.9em;
+}
