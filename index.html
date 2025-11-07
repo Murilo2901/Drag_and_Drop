@@ -3,28 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria Interativa - Drag and Drop</title>
+    <title>Galeria de Times - Drag and Drop</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>🎨 Galeria Interativa com Drag and Drop</h1>
+    <header>
+        <h1>🏆 Galeria de Times</h1>
+        <p>Arraste seus times preferidos para a área de <strong>Favoritos</strong>!</p>
+    </header>
 
-    <div class="container">
-        <section id="galeria" class="dropzone">
-            <h2>Galeria Principal</h2>
-            <div class="imagens">
-                <img src="https://picsum.photos/id/1011/150" alt="Imagem 1" class="draggable" draggable="true">
-                <img src="https://picsum.photos/id/1012/150" alt="Imagem 2" class="draggable" draggable="true">
-                <img src="https://picsum.photos/id/1015/150" alt="Imagem 3" class="draggable" draggable="true">
-                <img src="https://picsum.photos/id/1016/150" alt="Imagem 4" class="draggable" draggable="true">
+    <main class="container">
+        <!-- Galeria Principal -->
+        <section id="galeria" class="zona-drop">
+            <h2>Times Disponíveis</h2>
+            <div class="times">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Logo_do_Sport_Club_Internacional.svg" 
+                     alt="Internacional" class="draggable" draggable="true">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/5c/Palmeiras_logo.svg" 
+                     alt="Palmeiras" class="draggable" draggable="true">
+                <img src="https://upload.wikimedia.org/wikipedia/en/0/04/Gr%C3%AAmio_logo.svg" 
+                     alt="Grêmio" class="draggable" draggable="true">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/5a/Santos_logo.svg" 
+                     alt="Santos" class="draggable" draggable="true">
+                <img src="https://upload.wikimedia.org/wikipedia/en/4/4e/Flamengo_logo.svg" 
+                     alt="Flamengo" class="draggable" draggable="true">
+                <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Corinthians_logo.svg" 
+                     alt="Corinthians" class="draggable" draggable="true">
             </div>
         </section>
 
-        <section id="favoritos" class="dropzone">
-            <h2>Favoritos (<span id="contador">0</span>)</h2>
-            <div class="imagens"></div>
+        <!-- Seção Favoritos -->
+        <section id="favoritos" class="zona-drop">
+            <h2>⭐ Meus Favoritos (<span id="contador">0</span>)</h2>
+            <div class="times"></div>
         </section>
-    </div>
+    </main>
+
+    <footer>
+        <p>⚙️ Desenvolvido por Murilo • JavaScript DOM + Drag & Drop</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
