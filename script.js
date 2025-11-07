@@ -5,7 +5,6 @@ const contador = document.getElementById('contador');
 
 let timeSelecionado = null;
 
-// === Eventos de arrastar os escudos ===
 times.forEach(time => {
     time.addEventListener('dragstart', () => {
         timeSelecionado = time;
@@ -18,7 +17,6 @@ times.forEach(time => {
     });
 });
 
-// === Eventos das zonas de drop ===
 document.querySelectorAll('.zona-drop').forEach(zona => {
     zona.addEventListener('dragover', e => {
         e.preventDefault();
@@ -33,7 +31,6 @@ document.querySelectorAll('.zona-drop').forEach(zona => {
         zona.classList.remove('dragover');
 
         if (zona.id === 'favoritos') {
-            // Evita duplicar times
             const existe = [...favoritos.children].some(el => el.alt === timeSelecionado.alt);
             if (!existe) {
                 const clone = timeSelecionado.cloneNode(true);
@@ -44,13 +41,11 @@ document.querySelectorAll('.zona-drop').forEach(zona => {
                 favoritos.appendChild(clone);
                 atualizarContador();
 
-                // Efeito de destaque ao adicionar
                 clone.style.transform = 'scale(1.2)';
                 setTimeout(() => clone.style.transform = 'scale(1)', 300);
             }
         }
 
-        // (Desafio extra) mover de volta para a galeria
         if (zona.id === 'galeria' && timeSelecionado.parentElement.id === 'favoritos') {
             galeria.appendChild(timeSelecionado);
             atualizarContador();
@@ -58,7 +53,6 @@ document.querySelectorAll('.zona-drop').forEach(zona => {
     });
 });
 
-// === Atualiza contador de favoritos ===
 function atualizarContador() {
     contador.textContent = favoritos.children.length;
 }
