@@ -1,88 +1,153 @@
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #eaf4fc, #fce4ec);
-    margin: 0;
-    padding: 0;
-    color: #222;
+  font-family: "Poppins", Arial, sans-serif;
+    background: url("https://wallpapers.com/images/hd/best-football-background-vkr4qy2utkrsn5rj.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 20px;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
 }
 
-header {
-    text-align: center;
-    padding: 30px;
-    background: #212121;
-    color: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -2;
 }
 
-header h1 {
-    margin-bottom: 5px;
-    font-size: 2.2em;
-    letter-spacing: 1px;
+body::after {
+  content: "";
+  position: fixed;
+  top: -100px;
+  left: -200px;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.25), transparent 60%),
+              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.25), transparent 60%);
+  animation: luzes 10s ease-in-out infinite alternate;
+  z-index: -1;
+  filter: blur(80px);
+}
+
+@keyframes luzes {
+  0% { transform: rotate(0deg) scale(1); opacity: 0.7; }
+  50% { transform: rotate(10deg) scale(1.1); opacity: 1; }
+  100% { transform: rotate(-10deg) scale(1); opacity: 0.8; }
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8), 0 0 10px #3cff00;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8), 0 0 10px #3cff00; }
+  to { text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9), 0 0 20px #00ff88; }
+}
+
+.descricao {
+  text-align: center;
+  color: #e0e0e0;
+  margin-bottom: 40px;
+  font-size: 1rem;
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin: 30px auto;
-    gap: 30px;
-    max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
 section {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    width: 45%;
-    padding: 20px;
-    transition: transform 0.3s;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 25px;
+  width: 430px;
+  min-height: 280px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  position: relative;
 }
 
-section:hover {
-    transform: translateY(-3px);
-}
-
-h2 {
-    margin-bottom: 15px;
-    color: #1565c0;
+section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .times {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 12px;
-    border: 3px solid transparent;
-    background: #f5f5f5;
-    padding: 10px;
-    cursor: grab;
-    transition: 0.3s;
+.time-card {
+  width: 100px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-img:hover {
-    transform: scale(1.08);
+.time-card:hover {
+  transform: translateY(-5px);
 }
 
-.zona-drop.dragover {
-    border: 3px dashed #1565c0;
-    background-color: #e3f2fd;
+.time-card img {
+  width: 85px;
+  height: 85px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid transparent;
+  padding: 8px;
+  cursor: grab;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-#favoritos img {
-    border: 3px solid gold;
-    cursor: pointer;
+.time-card img:hover {
+  border-color: #00ff88;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00ff88;
 }
 
-footer {
-    text-align: center;
-    background: #212121;
-    color: white;
-    padding: 10px;
-    font-size: 0.9em;
+.time-card p {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #f2f2f2;
+}
+
+.area-drop.dragover {
+  border: 2px dashed #00ff88;
+  background-color: rgba(0, 255, 136, 0.15);
+}
+
+#favoritos .time-card img {
+  border-color: #fbc02d;
+  cursor: pointer;
+}
+
+#favoritos .time-card img:hover {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 0 15px #fbc02d;
+}
+
+@media (max-width: 900px) {
+  section { width: 90%; }
 }

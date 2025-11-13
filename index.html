@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria de Times - Drag and Drop</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria de Times</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🏆 Galeria de Times</h1>
-        <p>Arraste seus times preferidos para a área de <strong>Favoritos</strong>!</p>
-    </header>
+  <h1>Galeria de Times</h1>
+  <p class="descricao">Arraste o escudo do time para seus favoritos. Clique para remover.</p>
 
-    <main class="container">
-        <section id="galeria" class="zona-drop">
-            <h2>Times Disponíveis</h2>
-            <div class="times">
-                <img src="/Imagens/Real-Madrid-symbol.png" 
-                     alt="Real Madrid" class="draggable" draggable="true">
-                <img src="/Imagens/Barcelona-Logo.png" 
-                     alt="Barcelona" class="draggable" draggable="true">
-                <img src="/Imagens/filters_no_upscale()_format(png)_quality(50).png" 
-                     alt="Bayern De Munique" class="draggable" draggable="true">
-                <img src="/Imagens/Liverpool_F.C.-Logo.wine.png" 
-                     alt="Liverpool" class="draggable" draggable="true">
-                <img src="/Imagens/Manchester_City_F.C.-Logo.wine.png" 
-                     alt="Manchester City" class="draggable" draggable="true">
-                <img src="/Imagens/psg-logo-png_seeklogo-256583.png" 
-                     alt="Psg" class="draggable" draggable="true">
-            </div>
-        </section>
+  <div class="container">
+    <section id="galeria">
+      <h2>Times Disponíveis</h2>
+      <div class="times">
+        <div class="time-card"><img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" draggable="true" alt="Barcelona"><p>Barcelona</p></div>
+        <div class="time-card"><img src="/Imagens/20140312182156!Logo_FC_Bayern_München_(2002–2017).svg.png" draggable="true" alt="Bayern"><p>Bayern</p></div>
+        <div class="time-card"><img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg" draggable="true" alt="Liverpool"><p>Liverpool</p></div>
+        <div class="time-card"><img src="https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg" draggable="true" alt="City"><p>Man City</p></div>
+        <div class="time-card"><img src="/Imagens/psg-logo-png_seeklogo-256583.png" draggable="true" alt="PSG"><p>PSG</p></div>
+        <div class="time-card"><img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" draggable="true" alt="Real"><p>Real Madrid</p></div>
+      </div>
+    </section>
 
-        <section id="favoritos" class="zona-drop">
-            <h2>⭐ Meus Favoritos (<span id="contador">0</span>)</h2>
-            <div class="times"></div>
-        </section>
-    </main>
+    <section id="favoritos" class="area-drop">
+      <h2>Favoritos (<span id="contador">0</span>)</h2>
+      <div class="times"></div>
+    </section>
+  </div>
 
-    <footer>
-        <p>⚙️ Desenvolvido por Murilo • JavaScript DOM + Drag & Drop</p>
-    </footer>
+  <audio id="somTorcida" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_166d539a7c.mp3?filename=soccer-crowd-small-110109.mp3" loop></audio>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
